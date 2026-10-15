@@ -11,6 +11,16 @@
   - `check-setup` — 푸시가 오지 않을 때 연동 상태를 순서대로 점검합니다.
 - 실행하는 스크립트, 훅, 로컬 프로그램은 없습니다.
 
+## 설치
+
+Claude Code 에서 한 줄로 설치합니다(마켓플레이스 `MobilePartnersCo/appbox-ai` 를 함께 등록합니다).
+
+```
+/plugin install appbox --marketplace MobilePartnersCo/appbox-ai
+```
+
+터미널에서는 `claude plugin marketplace add MobilePartnersCo/appbox-ai` 다음 `claude plugin install appbox@appbox-ai` 입니다.
+
 ## 연결 방법
 
 1. 플러그인을 설치한 뒤 Claude Code 에서 `/mcp` 를 열고 `plugin:appbox:appbox` → **Authenticate** 를 고릅니다.
