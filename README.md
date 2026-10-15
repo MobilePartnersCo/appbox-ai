@@ -143,7 +143,7 @@ codex mcp add appbox-docs --url https://console.appboxapp.com/api/mcp/docs
 | `/mcp` 에서 needs authentication · 401 | `/mcp` → appbox → Authenticate 로 다시 로그인. 콘솔에서 연결을 해제했거나 비밀번호를 바꿨으면 다시 연결해야 합니다 |
 | 403 `insufficient_scope` | 연결 권한 부족. 다시 연결하고 허용 화면에서 권한을 허용 |
 | 403 (그 밖) | 계정 정지 등 — 앱박스 고객지원 문의 |
-| 404 | 주소 오류. 환경변수 `APPBOX_MCP_URL` 을 설정했다면 값을 확인(설정하지 않으면 위 운영 주소를 씁니다) |
+| 404 | 주소 오류 — 수동 연결이면 주소가 `https://console.appboxapp.com/api/mcp` 인지 확인 |
 | `APP_NOT_ALLOWED` | 연결할 때 허용하지 않은 앱(연결한 뒤 만든 앱 포함). 다시 연결하면서 그 앱을 체크하세요 |
 
 ## 버전
@@ -156,9 +156,9 @@ codex mcp add appbox-docs --url https://console.appboxapp.com/api/mcp/docs
 | 브랜치 | 용도 |
 |---|---|
 | `main` | 고객 배포본 — 버전을 올리고 태그(`v1.0.1` …)를 붙인 것만 |
-| `develop` | 수정·시험. 시험은 이 브랜치를 내려받아 로컬 경로로 등록(`claude plugin marketplace add ./`) · Codex 는 `--ref develop` |
+| `develop` | 수정·시험. 이 브랜치를 내려받은 사본을 로컬 경로로 등록해 시험(`claude plugin marketplace add ./`) |
 
-- 서버 주소는 환경변수 `APPBOX_MCP_URL` 로 바꿔 시험합니다(시험용 주소는 사내 문서에 둡니다). 설정하지 않으면 운영 주소입니다.
+- `plugins/appbox/.mcp.json` 의 주소는 **운영 주소로 고정**입니다. 시험 서버로 시험할 때는 로컬 사본에서만 주소를 바꾸고 커밋하지 않습니다(시험 방법은 사내 문서).
 - **서버 먼저, 플러그인 나중** — 스킬이 새 서버 도구를 쓰면, 그 도구가 운영 서버에 반영된 뒤에 `main` 으로 배포합니다. 순서가 바뀌면 고객 플러그인이 없는 도구를 부릅니다.
 - 배포: `develop` → `main` 병합 · 세 매니페스트(`.claude-plugin/marketplace.json` · `plugins/appbox/.claude-plugin/plugin.json` · `plugins/appbox/.codex-plugin/plugin.json`)의 `version` 을 함께 올림 · `CHANGELOG.md` · 태그 · `claude plugin validate --strict ./` 통과.
 

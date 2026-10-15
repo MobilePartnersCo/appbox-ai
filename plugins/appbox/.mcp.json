@@ -2,7 +2,7 @@
   "mcpServers": {
     "appbox": {
       "type": "http",
-      "url": "${APPBOX_MCP_URL:-https://console.appboxapp.com/api/mcp}"
+      "url": "https://console.appboxapp.com/api/mcp"
     }
   }
 }
