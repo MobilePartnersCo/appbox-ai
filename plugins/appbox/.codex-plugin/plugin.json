@@ -31,7 +31,10 @@
     ],
     "websiteURL": "https://www.appboxapp.com",
     "privacyPolicyURL": "https://www.appboxapp.com/policy/privacy",
-    "termsOfServiceURL": "https://www.appboxapp.com/policy/terms/use"
+    "termsOfServiceURL": "https://www.appboxapp.com/policy/terms/use",
+    "brandColor": "#1C1443",
+    "composerIcon": "./assets/icon-small.svg",
+    "logo": "./assets/logo.png"
   },
   "repository": "https://github.com/MobilePartnersCo/appbox-ai",
   "license": "MIT"

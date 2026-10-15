@@ -14,6 +14,7 @@ plugins/appbox/.mcp.json                    원격 MCP 서버 설정 (Streamable
 plugins/appbox/skills/onboarding/SKILL.md   스킬: 시작 안내 — 지금 상태 진단 → 다음 한 단계
 plugins/appbox/skills/setup-fcm/SKILL.md    스킬: FCM 발급·등록 단계 안내 (키 파일은 다루지 않음)
 plugins/appbox/skills/check-setup/SKILL.md  스킬: 푸시 연동 점검 절차
+plugins/appbox/assets/                      아이콘(로고 · 작은 아이콘) — Codex 목록 표시용
 ```
 
 - 서버: `https://console.appboxapp.com/api/mcp` (Streamable HTTP, POST 전용)

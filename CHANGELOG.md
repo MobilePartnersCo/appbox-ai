@@ -10,3 +10,4 @@
 - Claude Code · Codex 플러그인 형식(마켓플레이스 이름 `appbox-ai`, 플러그인 이름 `appbox`)
 - 스킬 3종: `onboarding`(시작 안내) · `setup-fcm`(FCM 발급·등록 안내) · `check-setup`(푸시 연동 점검)
 - MIT 라이선스
+- 아이콘: 로고(`assets/logo.png`·`logo.svg`) · 작은 아이콘(`assets/icon-small.svg`) · 대표 색 `#1C1443`(Codex 목록 표시)
