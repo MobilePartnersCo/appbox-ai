@@ -1,7 +1,7 @@
 {
   "name": "appbox",
-  "version": "1.0.0",
-  "description": "앱박스 원격 MCP 서버 연결(앱박스 계정 로그인 · OAuth) + 시작 안내 · FCM 등록 안내 · 푸시 연동 점검 스킬. 도구는 모두 조회 전용",
+  "version": "1.0.1",
+  "description": "앱박스 계정 연결(OAuth)로 내 앱의 푸시 준비 상태(앱 등록 · FCM · 빌드 · 기기)를 확인하고 단계별 안내를 받는 원격 MCP + 스킬 3종(시작 안내 · FCM 등록 안내 · 푸시 연동 점검). 도구는 모두 조회 전용",
   "author": {
     "name": "MobilePartners",
     "email": "appbox@appboxapp.com",
