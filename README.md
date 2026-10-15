@@ -27,7 +27,7 @@ plugins/appbox/skills/check-setup/SKILL.md  스킬: 푸시 연동 점검 절차
 ## 1. 설치
 
 ```bash
-claude plugin marketplace add mobilepartners/appbox-ai   # 마켓플레이스 등록 (이름: appbox-ai)
+claude plugin marketplace add MobilePartnersCo/appbox-ai   # 마켓플레이스 등록 (이름: appbox-ai)
 claude plugin install appbox@appbox-ai                   # 플러그인 설치
 claude plugin list                                       # appbox@appbox-ai 가 enabled 인지 확인
 ```
@@ -78,7 +78,7 @@ claude mcp add --transport http appbox https://console.appboxapp.com/api/mcp
 이 저장소는 Codex 마켓플레이스 형식(`.agents/plugins/marketplace.json` · `plugins/appbox/.codex-plugin/plugin.json`)도 담고 있습니다. 스킬 3종이 함께 설치됩니다.
 
 ```bash
-codex plugin marketplace add mobilepartners/appbox-ai
+codex plugin marketplace add MobilePartnersCo/appbox-ai
 codex plugin add appbox@appbox-ai
 codex mcp login appbox                   # 브라우저에서 앱박스 로그인·허용
 ```
