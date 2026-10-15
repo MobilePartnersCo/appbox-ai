@@ -1,0 +1,20 @@
+{
+  "name": "appbox-ai",
+  "interface": {
+    "displayName": "AppBox"
+  },
+  "plugins": [
+    {
+      "name": "appbox",
+      "source": {
+        "source": "local",
+        "path": "./plugins/appbox"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

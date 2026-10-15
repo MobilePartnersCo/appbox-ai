@@ -1,0 +1,21 @@
+{
+  "name": "appbox",
+  "displayName": "AppBox",
+  "version": "1.0.0",
+  "description": "앱박스 원격 MCP 서버 연결(앱박스 계정 로그인 · OAuth) + 시작 안내 · FCM 등록 안내 · 푸시 연동 점검 스킬. 도구: 시작 단계 안내 · 내 앱 목록 · 앱 연동 점검 · 빌드 상태(모두 조회 전용)",
+  "author": {
+    "name": "MobilePartners",
+    "email": "appbox@appboxapp.com",
+    "url": "https://www.appboxapp.com"
+  },
+  "homepage": "https://www.appboxapp.com",
+  "keywords": [
+    "appbox",
+    "push",
+    "fcm",
+    "mcp",
+    "oauth"
+  ],
+  "repository": "https://github.com/mobilepartners/appbox-ai",
+  "license": "MIT"
+}

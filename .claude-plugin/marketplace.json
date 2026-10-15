@@ -1,0 +1,17 @@
+{
+  "name": "appbox-ai",
+  "description": "앱박스(AppBox) AI 연결 플러그인 마켓플레이스 — 앱박스 원격 MCP 서버 연결과 점검 스킬",
+  "version": "1.0.0",
+  "owner": {
+    "name": "MobilePartners",
+    "email": "appbox@appboxapp.com",
+    "url": "https://www.appboxapp.com"
+  },
+  "plugins": [
+    {
+      "name": "appbox",
+      "source": "./plugins/appbox",
+      "description": "앱박스 원격 MCP(시작 단계 안내 · 내 앱 목록 · 앱 연동 점검 · 빌드 상태)와 시작 안내 · FCM 등록 안내 · 푸시 연동 점검 스킬"
+    }
+  ]
+}
