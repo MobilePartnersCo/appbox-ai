@@ -22,8 +22,7 @@ plugins/appbox/assets/                      아이콘(로고 · 작은 아이콘
 - 서버: `https://console.appboxapp.com/api/mcp` (Streamable HTTP, POST 전용)
 - 인증: **OAuth** — 처음 쓸 때 Claude Code 가 브라우저로 앱박스 로그인·허용 화면을 연다. 토큰은 Claude Code 가 받아 보관하고 자동으로 갱신한다(사용자는 토큰을 보지 않는다)
 - 도구(모두 조회 전용): `appbox_get_onboarding_status` · `appbox_list_apps` · `appbox_check_app_setup` · `appbox_get_build_status`
-- 기기 도구: `appbox_find_device`(조회) · `appbox_set_tester`(테스터 지정 — 연결할 때 「추가 권한(선택)」을 켠 경우에만)
-- 앱 등록: `appbox_create_app` — 연결할 때 「추가 권한(선택)」의 「앱 등록」을 켠 경우에만. 만든 앱은 그 연결에 바로 허용됩니다
+- 기기 도구: `appbox_find_device`(조회)
 - 문서 도구(로그인 연결에 기본 포함, 서버에서 켜진 경우): `appbox_get_overview` · `appbox_search_docs` · `appbox_get_doc`(가이드) · `appbox_list_examples` · `appbox_get_example`(공개 샘플 소스) · `appbox_get_api_spec`(서버 API 명세)
 - 이 저장소에는 **매니페스트와 스킬만** 둡니다. 서버 코드·자격 증명은 넣지 않습니다.
 
@@ -45,7 +44,6 @@ claude plugin list                                       # appbox@appbox-ai 가 
 1. Claude Code 세션에서 `/mcp` → `plugin:appbox:appbox` 서버를 고르고 **Authenticate**.
 2. 브라우저에 앱박스 콘솔이 열리면 로그인합니다(이미 로그인돼 있으면 건너뜀).
 3. 허용 화면에서 권한·**허용할 앱**(전체 또는 선택)을 확인하고, 외부 AI 전송 고지에 동의한 뒤 **허용**.
-   - 「추가 권한(선택)」은 조회가 아닌 동작(테스터 기기 지정 등)입니다. 필요할 때만 켜세요 — 켜지 않아도 조회 도구는 모두 쓸 수 있습니다.
    - 앱 이름 아래 신원 표시를 확인하세요 — 「claude.ai 에서 확인된 앱」 · 「앱박스에 등록된 앱」 · 「확인되지 않은 앱」. 「확인되지 않은 앱」 인데 직접 시작한 연결이 아니라면 거부하세요.
 4. 브라우저에 완료가 뜨면 Claude Code 로 돌아옵니다. `/mcp` 에서 connected 로 바뀝니다.
 
