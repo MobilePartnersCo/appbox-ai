@@ -3,6 +3,8 @@
 앱박스(AppBox) 원격 MCP 서버를 Claude Code · Codex 에 연결하는 플러그인과, 그 플러그인을 담은 마켓플레이스 저장소입니다.
 연결은 **앱박스 계정 로그인(OAuth)** 으로 하며, 토큰을 직접 다루지 않습니다.
 
+> 사용자용 안내(Claude · Claude Code · Codex · Cursor 연결, 연결 화면 읽는 법, 문제 해결)는 **[앱박스 가이드 › AI 연결(MCP)](https://www.appboxapp.com/guide/setup/AI%20%EC%97%B0%EA%B2%B0%20%EC%86%8C%EA%B0%9C)** 에 있습니다. 이 README 는 설치 명령과 저장소 구성 중심입니다.
+
 ## 구성
 
 ```
@@ -44,7 +46,7 @@ claude plugin list                                       # appbox@appbox-ai 가 
 2. 브라우저에 앱박스 콘솔이 열리면 로그인합니다(이미 로그인돼 있으면 건너뜀).
 3. 허용 화면에서 권한·**허용할 앱**(전체 또는 선택)을 확인하고, 외부 AI 전송 고지에 동의한 뒤 **허용**.
    - 「추가 권한(선택)」은 조회가 아닌 동작(테스터 기기 지정 등)입니다. 필요할 때만 켜세요 — 켜지 않아도 조회 도구는 모두 쓸 수 있습니다.
-   - 화면에 "claude.ai 에서 확인된 앱"처럼 확인된 신원이 보이는지 확인하세요. "이름이 확인되지 않았습니다" 경고가 보이면 직접 시작한 연결이 아니라면 거부하세요.
+   - 앱 이름 아래 신원 표시를 확인하세요 — 「claude.ai 에서 확인된 앱」 · 「앱박스에 등록된 앱」 · 「확인되지 않은 앱」. 「확인되지 않은 앱」 인데 직접 시작한 연결이 아니라면 거부하세요.
 4. 브라우저에 완료가 뜨면 Claude Code 로 돌아옵니다. `/mcp` 에서 connected 로 바뀝니다.
 
 이후 스킬을 씁니다.
@@ -57,86 +59,36 @@ claude plugin list                                       # appbox@appbox-ai 가 
 
 도구의 전체 이름은 `mcp__plugin_appbox_appbox__appbox_list_apps` 형식입니다(권한 규칙에 쓸 때 이 이름 사용).
 
-- 연결 확인·해제: 앱박스 콘솔 **계정 > MCP 연결**. 해제하면 즉시 끊기고, 다시 쓰려면 2번을 다시 합니다.
+- 연결 확인·해제: 앱박스 콘솔 **계정 설정 › MCP 연결**. 해제하면 즉시 끊기고, 다시 쓰려면 2번을 다시 합니다.
 - AI 앱에서 앱박스 서버(커넥터)만 삭제하면 앱박스 쪽 연결은 남습니다. 끊으려면 콘솔에서 해제하세요.
 - 허용할 앱: 연결할 때 체크한 앱만 볼 수 있습니다('전체 앱'은 그때 목록의 전체 선택). 연결한 뒤 만든 앱을 쓰려면 다시 연결해 그 앱을 체크합니다.
 - 비밀번호를 바꾸거나 재설정하면 모든 MCP 연결이 해제됩니다(콘솔 알림으로 알려 줍니다).
 - 30일 동안 쓰지 않은 연결은 자동으로 해제됩니다. 다시 쓰려면 다시 로그인합니다.
 
-## 3. 다른 AI 앱에 수동 연결
+## 3. 다른 AI 앱에 연결
 
-모두 **주소만** 넣으면 처음 쓸 때 앱박스 로그인이 열립니다. 토큰을 넣지 마세요.
+모두 **주소만** 넣으면 처음 쓸 때 앱박스 로그인이 열립니다. 토큰을 넣지 마세요. 앱별 화면 안내는 [가이드](https://www.appboxapp.com/guide/setup/AI%20%EC%97%B0%EA%B2%B0%20%EC%86%8C%EA%B0%9C).
 
-### Claude Code (플러그인 없이)
+| 앱 | 연결 |
+|---|---|
+| Claude (웹 · 데스크톱 · 모바일) | 설정 › 커넥터 › 탐색에서 **AppBox** → 연결. 보이지 않으면 커스텀 커넥터에 아래 주소 |
+| Claude Code (플러그인 없이) | `claude mcp add --transport http appbox https://console.appboxapp.com/api/mcp` → `/mcp` 에서 appbox → Authenticate |
+| Codex (플러그인) | `codex plugin marketplace add MobilePartnersCo/appbox-ai` → `codex plugin add appbox@appbox-ai` → `codex mcp login appbox` |
+| Codex (플러그인 없이) | `codex mcp add appbox --url https://console.appboxapp.com/api/mcp` |
+| Cursor · 그 밖의 앱 | 원격 MCP 주소 `https://console.appboxapp.com/api/mcp` 추가(Cursor 는 `~/.cursor/mcp.json` 의 `mcpServers.appbox.url`). 연결 화면에 「확인되지 않은 앱」 으로 보이는 것이 정상이며, 직접 시작한 연결일 때만 허용 |
 
-```bash
-claude mcp add --transport http appbox https://console.appboxapp.com/api/mcp
-```
-
-`/mcp` 에서 appbox → Authenticate.
-
-### Codex (플러그인)
-
-이 저장소는 Codex 마켓플레이스 형식(`.agents/plugins/marketplace.json` · `plugins/appbox/.codex-plugin/plugin.json`)도 담고 있습니다. 스킬 3종이 함께 설치됩니다.
-
-```bash
-codex plugin marketplace add MobilePartnersCo/appbox-ai
-codex plugin add appbox@appbox-ai
-codex mcp login appbox                   # 브라우저에서 앱박스 로그인·허용
-```
-
-제거: `codex plugin remove appbox@appbox-ai` → `codex plugin marketplace remove appbox-ai`
-
-
-### Codex (CLI, 플러그인 없이)
-
-```bash
-codex mcp add appbox --url https://console.appboxapp.com/api/mcp
-```
-
-추가하면 바로 앱박스 로그인이 시작됩니다(나중에 다시 로그인: `codex mcp login appbox`).
-
-### Cursor
-
-`~/.cursor/mcp.json`(전역) 또는 프로젝트의 `.cursor/mcp.json`:
-
-```json
-{
-  "mcpServers": {
-    "appbox": {
-      "url": "https://console.appboxapp.com/api/mcp"
-    }
-  }
-}
-```
-
-> Cursor 는 연결할 때 앱 이름이 "직접 등록한 앱 — 이름이 확인되지 않았습니다"로 보입니다(정상). 직접 시작한 연결일 때만 허용하세요.
+Codex 플러그인 제거: `codex plugin remove appbox@appbox-ai` → `codex plugin marketplace remove appbox-ai`
 
 ### 로그인 없이 가이드만 (문서 입구)
 
-앱박스 계정이 없어도 공개 가이드를 AI 앱에서 찾아볼 수 있습니다. 문서 도구 3종만 제공하고 로그인 화면이 뜨지 않습니다.
+앱박스 계정이 없어도 공개 가이드·예제·서버 API 명세를 찾아볼 수 있습니다(문서 도구만, 로그인 화면 없음). 앱박스 로그인 연결(`/api/mcp`)에는 이미 들어 있으니 따로 추가할 필요가 없습니다.
 
 ```bash
 claude mcp add --transport http appbox-docs https://console.appboxapp.com/api/mcp/docs
 ```
 
-```bash
-codex mcp add appbox-docs --url https://console.appboxapp.com/api/mcp/docs
-```
-
-- 한 번에 메시지 하나만 받고(배치 불가), 호출 수 제한이 있습니다(IP 당 분당 60회).
-- **Codex 는 이 주소를 추가할 때 앱박스 로그인 화면을 띄울 수 있습니다.** 문서 입구는 로그인이 필요 없으니 닫아도 됩니다(도구는 그대로 동작). 뜨지 않게 하려면 `codex mcp add` 대신 `~/.codex/config.toml` 에 직접 적습니다:
-
-  ```toml
-  [mcp_servers.appbox-docs]
-  url = "https://console.appboxapp.com/api/mcp/docs"
-  ```
-- 앱박스 로그인 연결(`/api/mcp`)을 이미 쓰고 있으면 문서 도구가 들어 있으므로 이 주소를 따로 추가할 필요가 없습니다.
-- 서버에서 문서 기능이 꺼져 있으면 404 가 옵니다.
-
-### Claude.ai · ChatGPT (웹·데스크톱·모바일 앱)
-
-설정 > 커넥터 > 커스텀 커넥터 추가에 위 주소를 넣고 연결합니다.
+- 호출 수 제한: IP 당 분당 60회, 한 번에 메시지 하나(배치 불가).
+- Codex 는 `codex mcp add` 때 로그인 화면을 띄울 수 있습니다(닫아도 동작). 띄우지 않으려면 `~/.codex/config.toml` 에 `[mcp_servers.appbox-docs]` · `url = "https://console.appboxapp.com/api/mcp/docs"` 를 직접 적습니다.
 
 ## 4. 문제 해결
 
