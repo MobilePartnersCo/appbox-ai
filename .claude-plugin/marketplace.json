@@ -1,7 +1,7 @@
 {
   "name": "appbox-ai",
   "description": "앱박스(AppBox) AI 연결 플러그인 마켓플레이스 — 앱박스 원격 MCP 서버 연결과 점검 스킬",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "owner": {
     "name": "MobilePartners",
     "email": "appbox@appboxapp.com",

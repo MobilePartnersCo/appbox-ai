@@ -4,7 +4,7 @@
 
 ## 들어 있는 것
 
-- **원격 MCP 서버 연결** — `https://console.appboxapp.com/api/mcp` (Streamable HTTP). 이 플러그인은 주소만 설정하며 토큰이나 비밀값을 담지 않습니다.
+- **원격 MCP 서버 연결** — `https://mcp.appboxapp.com/mcp` (Streamable HTTP). 이 플러그인은 주소만 설정하며 토큰이나 비밀값을 담지 않습니다.
 - **스킬 3종**
   - `onboarding` — 지금 상태를 진단하고 다음 한 단계를 안내합니다.
   - `setup-fcm` — Firebase(FCM) 키 발급과 콘솔 등록 단계를 안내합니다. 키 파일 자체는 다루지 않습니다.
@@ -46,7 +46,7 @@ Claude Code 에서 한 줄로 설치합니다(마켓플레이스 `MobilePartners
 
 ## English summary
 
-AppBox connects your AI app to your AppBox account so you can check the push-notification readiness of your apps (app registration, FCM, builds, devices) and get step-by-step guidance. The plugin only configures the remote MCP server `https://console.appboxapp.com/api/mcp` and ships three skills (onboarding, setup-fcm, check-setup). It contains no scripts, hooks, or credentials. Sign-in uses OAuth with your AppBox account, every tool is read-only, and the server returns data only for the apps you allow when connecting. Privacy policy: https://www.appboxapp.com/policy/privacy
+AppBox connects your AI app to your AppBox account so you can check the push-notification readiness of your apps (app registration, FCM, builds, devices) and get step-by-step guidance. The plugin only configures the remote MCP server `https://mcp.appboxapp.com/mcp` and ships three skills (onboarding, setup-fcm, check-setup). It contains no scripts, hooks, or credentials. Sign-in uses OAuth with your AppBox account, every tool is read-only, and the server returns data only for the apps you allow when connecting. Privacy policy: https://www.appboxapp.com/policy/privacy
 
 ## 문의 · 라이선스
 

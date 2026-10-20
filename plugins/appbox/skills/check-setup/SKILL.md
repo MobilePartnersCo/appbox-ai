@@ -100,7 +100,7 @@ allowed-tools: mcp__plugin_appbox_appbox__appbox_list_apps mcp__plugin_appbox_ap
 | 401 (로그인 필요·연결 해제·만료) | `/mcp` 에서 앱박스 서버를 골라 다시 로그인(Authenticate)하도록 안내한다. 콘솔 계정 > MCP 연결에서 연결을 해제했거나, 비밀번호를 바꿨거나, 30일 동안 쓰지 않아 자동 해제됐으면 다시 연결해야 한다 |
 | 403 `insufficient_scope` | 연결 권한이 부족하다. 다시 연결하고 허용 화면에서 필요한 권한(`apps:read`·`devices:read`)을 허용하도록 안내한다 |
 | 403 (그 밖) | 계정 정지·베타 대상 아님 등 권한 추가로 풀리지 않는 거부다. 앱박스 고객지원에 문의하도록 안내한다 |
-| 404 | MCP 기능이 꺼져 있거나 주소가 틀렸다. 플러그인 없이 수동으로 연결했다면 주소가 `https://console.appboxapp.com/api/mcp` 인지 확인하도록 안내한다 |
+| 404 | MCP 기능이 꺼져 있거나 주소가 틀렸다. 플러그인 없이 수동으로 연결했다면 주소가 `https://mcp.appboxapp.com/mcp` 인지 확인하도록 안내한다 |
 | 429 | 연결 요청이 너무 많다. 잠시 뒤 다시 시도한다 |
 
 ## 하지 말 것

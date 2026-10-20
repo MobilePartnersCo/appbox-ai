@@ -19,7 +19,7 @@ plugins/appbox/skills/check-setup/SKILL.md  스킬: 푸시 연동 점검 절차
 plugins/appbox/assets/                      아이콘(로고 · 작은 아이콘) — Codex 목록 표시용
 ```
 
-- 서버: `https://console.appboxapp.com/api/mcp` (Streamable HTTP, POST 전용)
+- 서버: `https://mcp.appboxapp.com/mcp` (Streamable HTTP, POST 전용)
 - 인증: **OAuth** — 처음 쓸 때 Claude Code 가 브라우저로 앱박스 로그인·허용 화면을 연다. 토큰은 Claude Code 가 받아 보관하고 자동으로 갱신한다(사용자는 토큰을 보지 않는다)
 - 도구(모두 조회 전용): `appbox_get_onboarding_status` · `appbox_list_apps` · `appbox_check_app_setup` · `appbox_get_build_status`
 - 기기 도구: `appbox_find_device`(조회)
@@ -70,10 +70,10 @@ claude plugin list                                       # appbox@appbox-ai 가 
 | 앱 | 연결 |
 |---|---|
 | Claude (웹 · 데스크톱 · 모바일) | 설정 › 커넥터 › 탐색에서 **AppBox** → 연결. 보이지 않으면 커스텀 커넥터에 아래 주소 |
-| Claude Code (플러그인 없이) | `claude mcp add --transport http appbox https://console.appboxapp.com/api/mcp` → `/mcp` 에서 appbox → Authenticate |
+| Claude Code (플러그인 없이) | `claude mcp add --transport http appbox https://mcp.appboxapp.com/mcp` → `/mcp` 에서 appbox → Authenticate |
 | Codex (플러그인) | `codex plugin marketplace add MobilePartnersCo/appbox-ai` → `codex plugin add appbox@appbox-ai` → `codex mcp login appbox` |
-| Codex (플러그인 없이) | `codex mcp add appbox --url https://console.appboxapp.com/api/mcp` |
-| Cursor · 그 밖의 앱 | 원격 MCP 주소 `https://console.appboxapp.com/api/mcp` 추가(Cursor 는 `~/.cursor/mcp.json` 의 `mcpServers.appbox.url`). 연결 화면에 「확인되지 않은 앱」 으로 보이는 것이 정상이며, 직접 시작한 연결일 때만 허용 |
+| Codex (플러그인 없이) | `codex mcp add appbox --url https://mcp.appboxapp.com/mcp` |
+| Cursor · 그 밖의 앱 | 원격 MCP 주소 `https://mcp.appboxapp.com/mcp` 추가(Cursor 는 `~/.cursor/mcp.json` 의 `mcpServers.appbox.url`). 연결 화면에 「확인되지 않은 앱」 으로 보이는 것이 정상이며, 직접 시작한 연결일 때만 허용 |
 
 Codex 플러그인 제거: `codex plugin remove appbox@appbox-ai` → `codex plugin marketplace remove appbox-ai`
 
@@ -82,11 +82,11 @@ Codex 플러그인 제거: `codex plugin remove appbox@appbox-ai` → `codex plu
 앱박스 계정이 없어도 공개 가이드·예제·서버 API 명세를 찾아볼 수 있습니다(문서 도구만, 로그인 화면 없음). 앱박스 로그인 연결(`/api/mcp`)에는 이미 들어 있으니 따로 추가할 필요가 없습니다.
 
 ```bash
-claude mcp add --transport http appbox-docs https://console.appboxapp.com/api/mcp/docs
+claude mcp add --transport http appbox-docs https://mcp.appboxapp.com/docs
 ```
 
 - 호출 수 제한: IP 당 분당 60회, 한 번에 메시지 하나(배치 불가).
-- Codex 는 `codex mcp add` 때 로그인 화면을 띄울 수 있습니다(닫아도 동작). 띄우지 않으려면 `~/.codex/config.toml` 에 `[mcp_servers.appbox-docs]` · `url = "https://console.appboxapp.com/api/mcp/docs"` 를 직접 적습니다.
+- Codex 는 `codex mcp add` 때 로그인 화면을 띄울 수 있습니다(닫아도 동작). 띄우지 않으려면 `~/.codex/config.toml` 에 `[mcp_servers.appbox-docs]` · `url = "https://mcp.appboxapp.com/docs"` 를 직접 적습니다.
 
 ## 4. 문제 해결
 
@@ -95,7 +95,7 @@ claude mcp add --transport http appbox-docs https://console.appboxapp.com/api/mc
 | `/mcp` 에서 needs authentication · 401 | `/mcp` → appbox → Authenticate 로 다시 로그인. 콘솔에서 연결을 해제했거나 비밀번호를 바꿨으면 다시 연결해야 합니다 |
 | 403 `insufficient_scope` | 연결 권한 부족. 다시 연결하고 허용 화면에서 권한을 허용 |
 | 403 (그 밖) | 계정 정지 등 — 앱박스 고객지원 문의 |
-| 404 | 주소 오류 — 수동 연결이면 주소가 `https://console.appboxapp.com/api/mcp` 인지 확인 |
+| 404 | 주소 오류 — 수동 연결이면 주소가 `https://mcp.appboxapp.com/mcp` 인지 확인 |
 | `APP_NOT_ALLOWED` | 연결에 허용하지 않은 앱(연결한 뒤 만든 앱 포함). 콘솔 계정 설정 › MCP 연결의 「허용 앱 변경」에서 그 앱을 체크하고 저장하세요 |
 
 ## 버전
