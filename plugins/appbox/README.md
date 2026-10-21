@@ -1,6 +1,6 @@
 # AppBox
 
-앱박스(AppBox) 계정에 AI 앱을 연결해, 내 앱의 푸시 준비 상태(앱 등록 · FCM · 빌드 · 기기)를 확인하고 다음에 할 일을 단계별로 안내받는 플러그인입니다. 기본 도구는 **조회만** 합니다. 연결할 때 「추가 권한(선택)」을 켠 경우에만 그 작업(앱 등록 · 테스터 지정 · 테스터 기기 대상 테스트 발송 · 연동 키 만들기 · 문의 접수)을 실행하며, 그 밖의 설정 변경과 고객 대상 발송은 앱박스 콘솔에서 직접 합니다.
+앱박스(AppBox) 계정에 AI 앱을 연결해, 내 앱의 푸시 준비 상태(앱 등록 · FCM · 빌드 · 기기)를 확인하고 다음에 할 일을 단계별로 안내받는 플러그인입니다. 기본 도구는 **조회만** 합니다. 연결할 때 허용한 경우에만 내가 요청한 작업(앱 등록 · 테스터 기기 대상 테스트 발송 · 앱 빌드 등 — 전체 목록은 가이드 「AI 연결(MCP)」)을 실행하며, 그 밖의 설정 변경과 고객 대상 발송은 앱박스 콘솔에서 직접 합니다.
 
 ## 들어 있는 것
 
@@ -49,7 +49,7 @@ Claude Code 에서 한 줄로 설치합니다(마켓플레이스 `MobilePartners
 
 ## English summary
 
-AppBox connects your AI app to your AppBox account so you can check the push-notification readiness of your apps (app registration, FCM, builds, devices) and get step-by-step guidance. The plugin only configures the remote MCP server `https://mcp.appboxapp.com/mcp` and ships three skills (onboarding, setup-fcm, check-setup). It contains no scripts, hooks, or credentials. Sign-in uses OAuth with your AppBox account, tools are read-only by default — actions (app registration, tester designation, test sends to tester devices only, creating event keys/topics/segments, support requests, Android builds) run only for the optional permissions you turn on when connecting — and the server returns data only for the apps you allow. Privacy policy: https://www.appboxapp.com/policy/privacy
+AppBox connects your AI app to your AppBox account so you can check the push-notification readiness of your apps (app registration, FCM, builds, devices) and get step-by-step guidance. The plugin only configures the remote MCP server `https://mcp.appboxapp.com/mcp` and ships three skills (onboarding, setup-fcm, check-setup). It contains no scripts, hooks, or credentials. Sign-in uses OAuth with your AppBox account, tools are read-only by default — actions you request (app registration, test sends to tester devices only, app builds, and more — see the AI connection guide for the full list) run only when you allow them while connecting — and the server returns data only for the apps you allow. Privacy policy: https://www.appboxapp.com/policy/privacy
 
 ## 문의 · 라이선스
 
