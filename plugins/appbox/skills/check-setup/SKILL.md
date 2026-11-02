@@ -38,6 +38,10 @@ allowed-tools: mcp__plugin_appbox_appbox__appbox_list_apps mcp__plugin_appbox_ap
 - 각 항목의 `note` 는 서버가 준 설명이다. 표의 안내와 함께 그대로 전달한다.
 - `devices.android`·`devices.ios`·`devices.testers` 는 **수신 허용 기기 수**다(콘솔 대시보드와 같은 기준). 특정 OS 만 0이면 그 OS 쪽 연동(예: iOS APNs 설정, 알림 권한)을 먼저 의심하도록 안내한다.
 - `lastDeviceActivityAt` 이 `null` 이면 "기기 활동 기록 없음"으로 표시한다.
+- **iOS 만 안 오면 `iosPush` 를 본다**(2026-11 서버부터, 없으면 건너뛴다). `checks` 와 따로 있는 칸이다.
+  - `MISSING`: 가장 최근 iOS 발송에서 iOS 기기가 모두 APNs 인증에 실패했다. Firebase 콘솔 › 프로젝트 설정 › 클라우드 메시징에서 Apple 앱의 APNs 인증 키를 올리도록 안내한다.
+  - `WARN`: 일부 기기만 실패(키가 없는 다른 번들 ID, 개발용 빌드 가능성)했거나, 판단할 iOS 발송이 없거나, 여정처럼 OS 가 기록되지 않는 발송에서 APNs 인증 실패가 있었다. `note` 를 그대로 전한다. 판단할 발송이 없으면 테스트 푸시 뒤 다시 점검하라고 안내한다.
+  - `OK`: 실패가 없었다는 뜻이지 키가 있다는 증명은 아니다.
 
 ### 3. (필요할 때만) 빌드 상태 — `appbox_get_build_status`
 
