@@ -16,12 +16,16 @@ plugins/appbox/.mcp.json                    원격 MCP 서버 설정 (Streamable
 plugins/appbox/skills/onboarding/SKILL.md   스킬: 시작 안내 — 지금 상태 진단 → 다음 한 단계
 plugins/appbox/skills/setup-fcm/SKILL.md    스킬: FCM 발급·등록 단계 안내 (키 파일은 다루지 않음)
 plugins/appbox/skills/check-setup/SKILL.md  스킬: 푸시 연동 점검 절차
+plugins/appbox/skills/weekly-report/SKILL.md    스킬: 주간 성과 보고(운영 현황 조회 권한)
+plugins/appbox/skills/campaign-review/SKILL.md  스킬: 캠페인 회고(운영 현황 조회 권한)
+plugins/appbox/skills/credit-forecast/SKILL.md  스킬: 크레딧 소진 예측(운영 현황 조회 권한)
 plugins/appbox/assets/                      아이콘(로고 · 작은 아이콘) — Codex 목록 표시용
 ```
 
 - 서버: `https://mcp.appboxapp.com/mcp` (Streamable HTTP, POST 전용)
 - 인증: **OAuth** — 처음 쓸 때 Claude Code 가 브라우저로 앱박스 로그인·허용 화면을 연다. 토큰은 Claude Code 가 받아 보관하고 자동으로 갱신한다(사용자는 토큰을 보지 않는다)
 - 조회 도구: `appbox_get_onboarding_status` · `appbox_list_apps` · `appbox_check_app_setup` · `appbox_get_build_status`
+- 운영 현황 조회 도구(연결할 때 받은 경우): `appbox_list_push_campaigns`, `appbox_get_push_campaign`, `appbox_get_dashboard`, `appbox_get_best_send_time`, `appbox_get_inapp_performance`, `appbox_get_billing`, `appbox_list_audiences`
 - 추가 권한 도구(연결할 때 켠 경우만): `appbox_create_app` · `appbox_set_tester` · `appbox_send_test_push` · `appbox_send_test_inapp` · `appbox_list_inapp_campaigns` · `appbox_get_delivery_result` · `appbox_create_event_type` · `appbox_create_topic` · `appbox_create_segment` · `appbox_create_support_contact`
 - 기기 도구: `appbox_find_device`(조회)
 - 문서 도구(로그인 연결에 기본 포함, 서버에서 켜진 경우): `appbox_get_overview` · `appbox_search_docs` · `appbox_get_doc`(가이드) · `appbox_list_examples` · `appbox_get_example`(공개 샘플 소스) · `appbox_get_api_spec`(서버 API 명세)
@@ -55,6 +59,9 @@ claude plugin list                                       # appbox@appbox-ai 가 
 | "앱박스로 푸시 보내고 싶어요", "뭐부터 해야 하나요" | `/appbox:onboarding [앱 코드]` |
 | "FCM 등록 어떻게 해요" | `/appbox:setup-fcm [앱 코드]` |
 | "푸시가 안 와요" | `/appbox:check-setup [앱 코드]` |
+| "지난주 푸시 성과 정리해 줘" | `/appbox:weekly-report [앱 코드]` |
+| "어제 보낸 캠페인 어땠어?" | `/appbox:campaign-review [앱 코드] [캠페인 코드]` |
+| "크레딧 언제 떨어져?" | `/appbox:credit-forecast [앱 코드]` |
 
 도구의 전체 이름은 `mcp__plugin_appbox_appbox__appbox_list_apps` 형식입니다(권한 규칙에 쓸 때 이 이름 사용).
 

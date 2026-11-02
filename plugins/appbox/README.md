@@ -5,10 +5,14 @@
 ## 들어 있는 것
 
 - **원격 MCP 서버 연결** — `https://mcp.appboxapp.com/mcp` (Streamable HTTP). 이 플러그인은 주소만 설정하며 토큰이나 비밀값을 담지 않습니다.
-- **스킬 3종**
+- **스킬 6종**
   - `onboarding` — 지금 상태를 진단하고 다음 한 단계를 안내합니다.
   - `setup-fcm` — Firebase(FCM) 키 발급과 콘솔 등록 단계를 안내합니다. 키 파일 자체는 다루지 않습니다.
   - `check-setup` — 푸시가 오지 않을 때 연동 상태를 순서대로 점검합니다.
+  - `weekly-report` — 지난 7일 푸시 성과와 이번 달 현황을 보고서로 정리합니다.
+  - `campaign-review` — 푸시 캠페인 하나를 숫자, 시간대, 문구로 돌아봅니다.
+  - `credit-forecast` — 이번 달 사용 추세로 제공량과 추가 크레딧이 언제쯤 모자랄지 가늠합니다.
+  - 아래 세 스킬은 연결에 「운영 현황 조회」 권한이 있을 때 씁니다(조회만).
 - 실행하는 스크립트, 훅, 로컬 프로그램은 없습니다.
 
 ## 설치
@@ -49,7 +53,7 @@ Claude Code 에서 한 줄로 설치합니다(마켓플레이스 `MobilePartners
 
 ## English summary
 
-AppBox connects your AI app to your AppBox account so you can check the push-notification readiness of your apps (app registration, FCM, builds, devices) and get step-by-step guidance. The plugin only configures the remote MCP server `https://mcp.appboxapp.com/mcp` and ships three skills (onboarding, setup-fcm, check-setup). It contains no scripts, hooks, or credentials. Sign-in uses OAuth with your AppBox account, tools are read-only by default — actions you request (app registration, test sends to tester devices only, app builds, and more — see the AI connection guide for the full list) run only when you allow them while connecting — and the server returns data only for the apps you allow. Privacy policy: https://www.appboxapp.com/policy/privacy
+AppBox connects your AI app to your AppBox account so you can check the push-notification readiness of your apps (app registration, FCM, builds, devices) and get step-by-step guidance. The plugin only configures the remote MCP server `https://mcp.appboxapp.com/mcp` and ships six skills (onboarding, setup-fcm, check-setup, weekly-report, campaign-review, credit-forecast). It contains no scripts, hooks, or credentials. Sign-in uses OAuth with your AppBox account, tools are read-only by default — actions you request (app registration, test sends to tester devices only, app builds, and more — see the AI connection guide for the full list) run only when you allow them while connecting — and the server returns data only for the apps you allow. Privacy policy: https://www.appboxapp.com/policy/privacy
 
 ## 문의 · 라이선스
 
