@@ -18,6 +18,7 @@ allowed-tools: mcp__plugin_appbox_appbox__appbox_list_apps mcp__plugin_appbox_ap
 3. **발송 모으기** — `appbox_list_push_campaigns` 에 `{ app, from, to, limit: 50 }`.
    - `truncated` 가 true 이고 `beyondRecent` 가 false 일 때만 50건을 넘은 것이다. 기간을 나눠 다시 부른다.
    - `beyondRecent` 가 true 면 최근 500건 밖이라 기간을 나눠도 더 볼 수 없다. 다시 부르지 말고, 볼 수 없는 발송이 있다고 적고 콘솔 발송 이력을 안내한다.
+   - 그 7일에 발송이 하나도 없으면 빈 표를 만들지 말고 발송이 없었다고 한 줄로 적은 뒤 이번 달 현황을 중심으로 정리한다.
    - `beyondRecent` 가 true 면 최근 500건 밖이라 볼 수 없는 발송이 있다고 보고서에 적는다.
    - 도구가 없거나 권한 오류면 "이 연결에서는 운영 현황 조회 도구를 쓸 수 없습니다. 콘솔 계정 › AI 연결에서 연결 상태를 확인하거나 앱박스에 문의하세요"라고 알리고 멈춘다. 다시 연결하라고 단정하지 않는다(대개 환경에서 아직 열지 않은 것이라 다시 연결해도 생기지 않는다).
 4. **정리** — 합계와 캠페인별로 발송 수, FCM 접수 수(`accepted`), 열람 수(`opened`)와 열람률을 표로. 열람률이 가장 높은 것과 낮은 것을 짚고, 필요하면 `appbox_get_push_campaign` 으로 상세(시간대별 열람, 문구)를 본다.
