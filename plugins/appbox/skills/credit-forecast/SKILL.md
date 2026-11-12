@@ -2,7 +2,6 @@
 name: credit-forecast
 description: 앱박스 앱의 이번 달 푸시, 인앱 사용 추세와 제공량, 추가 크레딧 잔여로 언제쯤 모자랄지 가늠한다. "크레딧 언제 떨어져?", "이번 달 제공량 넘을까?", "충전해야 해?" 같은 요청에 사용한다. 조회만 한다. 「운영 현황 조회」 권한이 있는 연결에서만 쓸 수 있다.
 argument-hint: "[앱 코드]"
-allowed-tools: mcp__plugin_appbox_appbox__appbox_list_apps mcp__plugin_appbox_appbox__appbox_get_billing mcp__plugin_appbox_appbox__appbox_get_dashboard mcp__plugin_appbox_appbox__appbox_get_plans
 ---
 
 # 앱박스 크레딧 소진 예측

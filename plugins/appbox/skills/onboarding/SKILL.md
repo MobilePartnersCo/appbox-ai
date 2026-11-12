@@ -2,7 +2,6 @@
 name: onboarding
 description: 앱박스를 처음 쓰는 고객이 푸시를 보내기까지 지금 어디까지 됐는지 진단하고 다음에 할 일을 순서대로 안내한다. "앱박스로 푸시 보내고 싶어요", "뭐부터 해야 하나요", "앱박스 시작하는 법", "앱 만들었는데 다음에 뭐 해요" 같은 요청에 사용한다. 시작 단계 안내(appbox_get_onboarding_status)로 조회만 한다.
 argument-hint: "[앱 코드 또는 앱 이름]"
-allowed-tools: mcp__plugin_appbox_appbox__appbox_get_onboarding_status mcp__plugin_appbox_appbox__appbox_list_apps mcp__plugin_appbox_appbox__appbox_check_app_setup mcp__plugin_appbox_appbox__appbox_get_build_status mcp__plugin_appbox_appbox__appbox_search_docs mcp__plugin_appbox_appbox__appbox_get_doc mcp__plugin_appbox_appbox__appbox_create_app
 ---
 
 # 앱박스 시작 안내

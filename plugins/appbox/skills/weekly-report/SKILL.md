@@ -2,7 +2,6 @@
 name: weekly-report
 description: 앱박스 앱의 지난 7일 푸시 발송 성과, 이번 달 현황, 인앱 성과를 한 장의 주간 보고서로 정리한다. "주간 보고서 써 줘", "지난주 푸시 성과 정리해 줘", "이번 주 어땠어?" 같은 요청에 사용한다. 조회만 한다. 「운영 현황 조회」 권한이 있는 연결에서만 쓸 수 있다.
 argument-hint: "[앱 코드] [마지막 날 YYYY-MM-DD]"
-allowed-tools: mcp__plugin_appbox_appbox__appbox_list_apps mcp__plugin_appbox_appbox__appbox_list_push_campaigns mcp__plugin_appbox_appbox__appbox_get_push_campaign mcp__plugin_appbox_appbox__appbox_get_dashboard mcp__plugin_appbox_appbox__appbox_get_inapp_performance
 ---
 
 # 앱박스 주간 성과 보고

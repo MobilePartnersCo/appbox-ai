@@ -2,6 +2,11 @@
 
 버전은 SemVer 를 따르고, 서버(MCP `appbox`) 버전과 별개입니다. 고객에게는 `main` 브랜치의 버전이 올라갈 때 업데이트가 전달됩니다.
 
+## 1.1.2 — 2026-11-12
+
+- 디렉토리 정책(Verified 조직이 아닌 플러그인) 맞춤: 스킬 6종의 `allowed-tools` 를 뺌. 도구는 그대로 쓰고, Claude Code 가 AppBox 도구를 처음 부를 때 사용 허락을 묻는다
+- 아이콘 SVG 2개를 뺌: `logo.svg` 는 쓰는 곳이 없어 삭제, Codex 작은 아이콘은 같은 그림의 PNG(`assets/icon-small.png`, 64px)로
+
 ## 1.1.1 — 2026-11-12
 
 - `plugin.json` 에 개인정보 처리방침 주소(`privacyPolicyUrl`) 추가(디렉토리 검사 참고 항목)

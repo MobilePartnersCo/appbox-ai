@@ -2,7 +2,6 @@
 name: setup-fcm
 description: 앱박스 앱에 FCM(Firebase 서비스 계정 키)을 발급·등록하는 과정을 단계별로 안내한다. "FCM 등록 어떻게 해요", "Firebase 키 어디서 받아요", "푸시 키 등록", "FCM 미등록이라고 나와요" 같은 요청이나, 시작 안내에서 다음 단계가 FCM 일 때 사용한다. 조회만 하고 키 파일은 다루지 않는다.
 argument-hint: "[앱 코드]"
-allowed-tools: mcp__plugin_appbox_appbox__appbox_get_onboarding_status mcp__plugin_appbox_appbox__appbox_list_apps mcp__plugin_appbox_appbox__appbox_check_app_setup mcp__plugin_appbox_appbox__appbox_search_docs mcp__plugin_appbox_appbox__appbox_get_doc
 ---
 
 # 앱박스 FCM 발급·등록 안내

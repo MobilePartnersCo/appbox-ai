@@ -2,7 +2,6 @@
 name: campaign-review
 description: 앱박스 푸시 캠페인 하나의 성과를 숫자, 시간대, 문구 기준으로 돌아보고 다음 발송에 쓸 점을 정리한다. "어제 이벤트 푸시 어땠어?", "이 캠페인 왜 열람률이 낮아?", "캠페인 회고해 줘" 같은 요청에 사용한다. 조회만 한다. 「운영 현황 조회」 권한이 있는 연결에서만 쓸 수 있다.
 argument-hint: "[앱 코드] [캠페인 코드 또는 이름]"
-allowed-tools: mcp__plugin_appbox_appbox__appbox_list_apps mcp__plugin_appbox_appbox__appbox_list_push_campaigns mcp__plugin_appbox_appbox__appbox_get_push_campaign mcp__plugin_appbox_appbox__appbox_get_best_send_time
 ---
 
 # 앱박스 캠페인 회고

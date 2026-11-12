@@ -2,7 +2,6 @@
 name: check-setup
 description: 앱박스 앱의 푸시 연동 상태를 점검하고 한국어로 정리한다. "푸시가 안 와요", "알림이 안 와요", "FCM 설정 맞나요", "기기가 등록됐나요" 같은 문의를 받았을 때 사용한다. 앱 목록(appbox_list_apps) → 앱 연동 점검(appbox_check_app_setup) 순서로 조회만 한다.
 argument-hint: "[앱 코드 또는 앱 이름]"
-allowed-tools: mcp__plugin_appbox_appbox__appbox_list_apps mcp__plugin_appbox_appbox__appbox_check_app_setup mcp__plugin_appbox_appbox__appbox_get_build_status mcp__plugin_appbox_appbox__appbox_search_docs mcp__plugin_appbox_appbox__appbox_get_doc mcp__plugin_appbox_appbox__appbox_find_device
 ---
 
 # 앱박스 푸시 연동 점검
