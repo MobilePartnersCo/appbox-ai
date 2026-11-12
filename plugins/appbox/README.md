@@ -31,7 +31,7 @@ Claude Code 에서 한 줄로 설치합니다(마켓플레이스 `MobilePartners
 2. 브라우저에 앱박스 콘솔이 열리면 로그인하고, 허용 화면에서 **허용할 앱**을 고른 뒤 외부 AI 전송 고지에 동의하고 **허용**합니다.
 3. Claude Code 로 돌아와 「내 앱 목록 보여 줘」, 「푸시가 안 와요」처럼 요청하면 됩니다.
 
-앱박스 계정이 필요합니다. 계정은 [앱박스](https://www.appboxapp.com)에서 만들 수 있습니다. 화면별 안내는 [앱박스 가이드 › AI 연결(MCP)](https://www.appboxapp.com/guide/setup/AI%20%EC%97%B0%EA%B2%B0%20%EC%86%8C%EA%B0%9C).
+앱박스 계정이 필요합니다. 계정은 [앱박스](https://www.appboxapp.com)에서 만들 수 있습니다. 화면별 안내는 [앱박스 가이드 › AI 연결(MCP)](https://www.appboxapp.com/guide/setup/AI%20%EC%97%B0%EA%B2%B0%20%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0).
 
 ## 도구
 

@@ -3,7 +3,7 @@
 앱박스(AppBox) 원격 MCP 서버를 Claude Code · Codex 에 연결하는 플러그인과, 그 플러그인을 담은 마켓플레이스 저장소입니다.
 연결은 **앱박스 계정 로그인(OAuth)** 으로 하며, 토큰을 직접 다루지 않습니다.
 
-> 사용자용 안내(Claude · Claude Code · Codex · Cursor 연결, 연결 화면 읽는 법, 문제 해결)는 **[앱박스 가이드 › AI 연결(MCP)](https://www.appboxapp.com/guide/setup/AI%20%EC%97%B0%EA%B2%B0%20%EC%86%8C%EA%B0%9C)** 에 있습니다. 이 README 는 설치 명령과 저장소 구성 중심입니다.
+> 사용자용 안내(Claude · Claude Code · Codex · Cursor 연결, 연결 화면 읽는 법, 문제 해결)는 **[앱박스 가이드 › AI 연결(MCP)](https://www.appboxapp.com/guide/setup/AI%20%EC%97%B0%EA%B2%B0%20%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0)** 에 있습니다. 이 README 는 설치 명령과 저장소 구성 중심입니다.
 
 ## 구성
 
@@ -73,7 +73,7 @@ claude plugin list                                       # appbox@appbox-ai 가 
 
 ## 3. 다른 AI 앱에 연결
 
-모두 **주소만** 넣으면 처음 쓸 때 앱박스 로그인이 열립니다. 토큰을 넣지 마세요. 앱별 화면 안내는 [가이드](https://www.appboxapp.com/guide/setup/AI%20%EC%97%B0%EA%B2%B0%20%EC%86%8C%EA%B0%9C).
+모두 **주소만** 넣으면 처음 쓸 때 앱박스 로그인이 열립니다. 토큰을 넣지 마세요. 앱별 화면 안내는 [가이드](https://www.appboxapp.com/guide/setup/AI%20%EC%97%B0%EA%B2%B0%20%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0).
 
 | 앱 | 연결 |
 |---|---|
